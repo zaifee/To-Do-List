@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153677, #4e085f);
+    padding: 10px;
+}
+
+#todo-app {
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+#todo-app h2 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#todo-app h2 img {
+    width: 30px;
+    margin-left: 10px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+button:hover {
+    background-color: rgb(187, 91, 91);
+}
+
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 12px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 26px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-position: center;
+    background-size: cover;
+    top: 12px;
+    left: 8px;
+}
+
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url(images/checked.png);
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover {
+    background-color: #edeef0;
+}
+
+/* Media Query for screens below 400px */
+@media (max-width: 400px) {
+    .container {
+        display: flex;
+        justify-content: center; /* Center the todo app horizontally */
+        align-items: center; /* Center vertically if needed */
+    }
+
+    #todo-app {
+        margin: 0 auto; /* Center the app horizontally */
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    button {
+        padding: 10px 20px; /* Reduce button padding */
+        font-size: 14px; /* Smaller font size for button */
+    }
+
+    input {
+        padding: 10px; /* Maintain proper spacing for input */
+        font-size: 14px; /* Slightly smaller font size */
+    }
+
+    ul li {
+        font-size: 14px; /* Adjust font size for list items */
+        padding: 10px 10px 10px 40px; /* Reduce padding for list items */
+    }
+
+    ul li::before {
+        height: 22px; /* Adjust checkbox size */
+        width: 22px;
+        top: 8px;
+        left: 6px;
+    }
+
+    ul li span {
+        width: 30px; /* Smaller close button */
+        height: 30px;
+        font-size: 18px; /* Smaller font size for close button */
+        top: 8px;
+        right: 10px; /* Adjust position */
+    }
+}
+
+/* Media Query for screens below 318px */
+@media (max-width: 318px) {
+    .row {
+        flex-direction: column; /* Stack the input and button vertically */
+        align-items: stretch;  /* Make the button and input full width */
+    }
+
+    input {
+        width: 100%; /* Make input take full width */
+        margin-bottom: 10px; /* Add space between input and button */
+        padding: 8px; /* Adjust padding for smaller screens */
+    }
+
+    button {
+        width: 100%; /* Make button take full width */
+        padding: 10px; /* Reduce button padding */
+        font-size: 14px; /* Smaller font size for button */
+    }
+
+    #todo-app {
+        padding: 10px 20px; /* Reduce padding for smaller screens */
+    }
+}
+
+/* Media Query for screens below 300px */
+@media (max-width: 300px) {
+    .row {
+        flex-direction: column; /* Stack the input and button vertically */
+        align-items: stretch;  /* Make the button and input full width */
+    }
+
+    input {
+        width: 100%; /* Make input take full width */
+        margin-bottom: 10px; /* Add space between input and button */
+        padding: 8px; /* Adjust padding for smaller screens */
+    }
+
+    button {
+        width: calc(100% - 20px); /* Reduce the button width to leave space on the right */
+        padding: 10px; /* Adjust padding for smaller screens */
+        font-size: 14px; /* Smaller font size */
+        margin-right: 10px; /* Add margin to the right */
+    }
+
+    #todo-app {
+        padding: 10px 20px; /* Reduce padding for smaller screens */
+    }
+}
